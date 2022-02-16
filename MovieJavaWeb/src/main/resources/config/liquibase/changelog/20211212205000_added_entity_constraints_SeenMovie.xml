@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity SeenMovie.
+    -->
+    <changeSet id="20211212205000-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="movie_id"
+                                 baseTableName="seen_movie"
+                                 constraintName="fk_seen_movie_movie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="movie"/>
+
+        <addForeignKeyConstraint baseColumnNames="movie_user_id"
+                                 baseTableName="seen_movie"
+                                 constraintName="fk_seen_movie_movie_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="movie_user"/>
+
+    </changeSet>
+</databaseChangeLog>

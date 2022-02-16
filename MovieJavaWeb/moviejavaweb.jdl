@@ -1,0 +1,53 @@
+entity Movie {
+	title String
+    date ZonedDateTime
+    externalId String
+}
+
+entity SeenMovie {
+	date ZonedDateTime
+}
+
+entity MovieUser {
+	username String
+}
+
+entity Contact {
+	name String
+    birthDate ZonedDateTime
+    gender String
+    email String
+}
+
+entity Role {
+	name String
+}
+
+entity Address {
+	country String
+    area String
+    city String
+    street String
+    number String
+}
+
+relationship OneToOne {
+    Contact to MovieUser
+}
+
+relationship ManyToMany {
+	MovieUser to Role
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Movie to SeenMovie
+    MovieUser to SeenMovie
+    Contact to Address
+}
+
+
+dto * with mapstruct
+paginate * with pagination
+service * with serviceClass
+

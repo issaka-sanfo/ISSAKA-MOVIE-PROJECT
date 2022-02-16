@@ -1,0 +1,11 @@
+version: '2'
+services:
+  moviejavaweb-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/MovieJavaWeb/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=MovieJavaWeb
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
